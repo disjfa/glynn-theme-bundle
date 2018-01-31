@@ -1,0 +1,30 @@
+{
+  "name": "disjfa/glynn-theme-bundle",
+  "type": "symfony-bundle",
+  "description": "Symfony glynn admin theme bundle",
+  "keywords": ["Theme bundle"],
+  "homepage": "https://github.com/disjfa/glynn-theme-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "disjfa",
+      "email": "disjfa@disjfa.nl",
+      "homepage": "https://github.com/disjfa"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "twig/twig": "^1.28 || ^2.0",
+    "symfony/templating": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Disjfa\\GlynnTemplateBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.dev"
+    }
+  }
+}
