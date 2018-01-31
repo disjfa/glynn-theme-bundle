@@ -16,7 +16,7 @@
         <div class="sidebar navbar navbar-expand-lg navbar-dark d-lg-block px-0">
             <div class="text-lg-center py-3 px-3">
                 <a class="site-title" href="{{ path('home_index') }}">
-                    <img src="{{ asset("/glynn-admin/img/barista-icons_coffea-arabica.svg") }}" alt="" title="">
+                    <img src="{{ asset("admin/barista-icons_coffea-arabica.svg") }}" alt="" title="">
                     <span class="hidden-lg-up">
                         Glynn admin
                     </span>
@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="main-menu">
                 <div class="col-12 px-0">
                     {% if app.user %}
-                        <div class="dropdown pull-right">
+                        <div class="dropdown float-right">
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn text-muted">
                                 <i class="fa fa-chevron-down"></i>
                             </a>
@@ -38,16 +38,16 @@
                                     <i class="fa fa-user"></i> Profile
                                 </a>
                                 <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">
-                                    <i class="fa fa-sign-out"></i> Logout
+                                    <i class="fa fa-sign-out-alt"></i> Logout
                                 </a>
                             </div>
                         </div>
                         <a class="sidebar-user" href="{{ path('fos_user_profile_show') }}">
                             <div class="media">
                                 <div class="media-left">
-                                    {#<img src="{{ gravatar(app.user.email) }}"#}
-                                    {#class="rounded img-fluid sidebar-user-img pr-3"#}
-                                    {#alt="Profile image">#}
+                                    <img src="{{ gravatar(app.user.email) }}"
+                                         class="rounded img-fluid sidebar-user-img pr-3"
+                                         alt="Profile image">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">

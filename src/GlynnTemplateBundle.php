@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Disjfa\GlynnTemplateBundle;
+namespace Disjfa\GlynnTemplateBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
