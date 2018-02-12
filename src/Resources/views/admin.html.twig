@@ -7,7 +7,9 @@
 
     <title>{% block title %}Glynn admin{% endblock %}</title>
     <meta name="description" content="{% block description %}{% endblock %}">
-
+    {% block meta %}
+        {{ include('@GlynnTemplate/_meta.html.twig') }}
+    {% endblock %}
     <link rel="stylesheet" href="{{ asset('build/admin.css') }}">
 </head>
 <body>
