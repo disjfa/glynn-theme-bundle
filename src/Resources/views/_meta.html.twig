@@ -1,3 +1,5 @@
+{%- trans_default_domain 'glynn-theme' -%}
+
 <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/icons/apple-touch-icon-57x57.png') }}">
 <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('/icons/apple-touch-icon-60x60.png') }}">
 <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('/icons/apple-touch-icon-72x72.png') }}">
@@ -9,14 +11,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/icons/apple-touch-icon-180x180.png') }}">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Glynn admin">
+<meta name="apple-mobile-web-app-title" content="{{ 'site.navbar.title' | trans }}">
 <link rel="yandex-tableau-widget" href="{{ asset('/icons/yandex-browser-manifest.json') }}">
 <link rel="icon" type="image/png" sizes="228x228" href="{{ asset('/icons/coast-228x228.png') }}'">
 <link rel="manifest" href="{{ asset('/icons/manifest.json') }}">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#3d566e">
-<meta name="application-name" content="Glynn admin">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/icons/favicon-32x32.png') }}'">
+<meta name="application-name" content="{{ 'site.navbar.title' | trans }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/icons/favicon-32x32.png') }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/icons/favicon-16x16.png') }}">
 <link rel="shortcut icon" href="{{ asset('/icons/favicon.ico') }}">
 <meta name="msapplication-TileColor" content="#3d566e">

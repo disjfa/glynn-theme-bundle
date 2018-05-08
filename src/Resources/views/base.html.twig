@@ -1,3 +1,5 @@
+{%- trans_default_domain 'glynn-theme' -%}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}Glynn admin{% endblock %}</title>
-    <meta name="description" content="{% block description %}{% endblock %}">
+    <title>{% block title %}{{ 'site.meta.title' | trans }}{% endblock %}</title>
     {% block meta %}
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
         {{ include('@GlynnTemplate/_meta.html.twig') }}
+        {% block meta_og %}
+        {% endblock %}
+        {% block meta_twitter %}
+            <meta name="twitter:card" value="summary">
+        {% endblock %}
     {% endblock %}
     <link rel="stylesheet" href="{{ asset('build/site.css') }}">
 </head>
@@ -16,8 +23,8 @@
 {% block navbar %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{{ path('home_index') }}">Glynn site</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="{{ path('home_index') }}">{% block navbar_title %}{{ 'site.navbar.title' | trans }}{% endblock %}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="{{ 'site.navbar.toggle_navigation' | trans }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -35,14 +42,14 @@
                             <li class="nav-item">
                                 <a href="{{ path('admin_dashboard_index') }}" class="nav-link">
                                     <i class="fa fa-tachometer-alt"></i>
-                                    {{ 'app.admin' | trans }}
+                                    {{ 'site.navbar.admin' | trans }}
                                 </a>
                             </li>
                         {% endif %}
                     {% else %}
                         <li class="nav-item">
                             <a href="{{ path('fos_user_security_login') }}" class="nav-link">
-                                {{ 'app.login' | trans }}
+                                {{ 'site.navbar.login' | trans }}
                             </a>
                         </li>
                     {% endif %}
