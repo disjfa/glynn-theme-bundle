@@ -1,0 +1,20 @@
+site:
+    meta:
+        title: Glynn site
+    navbar:
+        toggle_navigation: Toggle navigation
+        admin: Admin
+        login: Login
+        title: Glynn site
+admin:
+    head:
+        title: Glynn admin
+    nav:
+        title_alt: Glynn admin logo
+        title: Glynn admin
+        toggle_navigation: Toggle navigation
+        profile: Profile
+        logout: Logout
+        profile_image: My profile image
+    main:
+        title: Hello glynn admin

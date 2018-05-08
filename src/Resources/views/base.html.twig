@@ -21,9 +21,9 @@
 </head>
 <body>
 {% block navbar %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg {% block navbar_nav_class %}navbar-light bg-light{% endblock %}">
         <div class="container">
-            <a class="navbar-brand" href="{{ path('home_index') }}">{% block navbar_title %}{{ 'site.navbar.title' | trans }}{% endblock %}</a>
+            <a class="navbar-brand" href="{{ path('home_index') }}">{% block navbar_brand %}{{ 'site.navbar.title' | trans }}{% endblock %}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="{{ 'site.navbar.toggle_navigation' | trans }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,6 +49,7 @@
                     {% else %}
                         <li class="nav-item">
                             <a href="{{ path('fos_user_security_login') }}" class="nav-link">
+                                <i class="fa fa-user"></i>
                                 {{ 'site.navbar.login' | trans }}
                             </a>
                         </li>
