@@ -6,6 +6,7 @@ site:
         admin: Admin
         login: Login
         title: Glynn site
+        logout: Logout
 admin:
     head:
         title: Glynn admin
