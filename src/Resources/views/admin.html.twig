@@ -12,7 +12,9 @@
     {% block meta %}
         {{ include('@GlynnTemplate/_meta.html.twig') }}
     {% endblock %}
-    <link rel="stylesheet" href="{{ asset('build/admin.css') }}">
+    {% block stylesheet %}
+        <link rel="stylesheet" href="{{ asset('build/admin.css') }}">
+    {% endblock %}
 </head>
 <body>
 <div class="page">

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
+  <file id="glynn-theme.nl">
+    <unit id="3WzSCTi" name="site.meta.title">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/base.html.twig:10</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>site.meta.title</source>
+        <target>Glynn site</target>
+      </segment>
+    </unit>
+    <unit id="0JY2lxk" name="site.navbar.toggle_navigation">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/base.html.twig:27</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>site.navbar.toggle_navigation</source>
+        <target>Navigatie omschakelen</target>
+      </segment>
+    </unit>
+    <unit id="XdjmwSf" name="site.navbar.title">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/base.html.twig:26</note>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/_meta.html.twig:14</note>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/_meta.html.twig:20</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>site.navbar.title</source>
+        <target>Glynn site</target>
+      </segment>
+    </unit>
+    <unit id="yRn5L9c" name="site.navbar.admin">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/base.html.twig:42</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>site.navbar.admin</source>
+        <target>Admin</target>
+      </segment>
+    </unit>
+    <unit id="qQ0clFV" name="site.navbar.logout">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/base.html.twig:55</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>site.navbar.logout</source>
+        <target>Uitloggen</target>
+      </segment>
+    </unit>
+    <unit id="HvyHuCV" name="site.navbar.login">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/base.html.twig:62</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>site.navbar.login</source>
+        <target>Inloggen</target>
+      </segment>
+    </unit>
+    <unit id="B_vlOyx" name="admin.nav.title_alt">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/admin.html.twig:25</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>admin.nav.title_alt</source>
+        <target>Glynn admin logo</target>
+      </segment>
+    </unit>
+    <unit id="rS8mmn1" name="admin.nav.title">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/admin.html.twig:27</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>admin.nav.title</source>
+        <target>Glynn admin</target>
+      </segment>
+    </unit>
+    <unit id="ChwWlxU" name="admin.nav.toggle_navigation">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/admin.html.twig:32</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>admin.nav.toggle_navigation</source>
+        <target>Navigatie omschakelen</target>
+      </segment>
+    </unit>
+    <unit id="BdH2zgZ" name="admin.nav.profile">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/admin.html.twig:44</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>admin.nav.profile</source>
+        <target>Profiel</target>
+      </segment>
+    </unit>
+    <unit id="7wKytOC" name="admin.nav.logout">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/admin.html.twig:47</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>admin.nav.logout</source>
+        <target>Uitloggen</target>
+      </segment>
+    </unit>
+    <unit id="prSBapY" name="admin.nav.profile_image">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/admin.html.twig:56</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>admin.nav.profile_image</source>
+        <target>Mijn profiel afbeelding</target>
+      </segment>
+    </unit>
+    <unit id="ANxv3z4" name="admin.head.title">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/admin.html.twig:10</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>admin.head.title</source>
+        <target>Glynn admin</target>
+      </segment>
+    </unit>
+    <unit id="rlyEDvV" name="admin.main.title">
+      <notes>
+        <note category="file-source" priority="1">vendor/disjfa/glynn-theme-bundle/src/Resources/views/admin.html.twig:78</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>admin.main.title</source>
+        <target>Hallo glynn admin</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
