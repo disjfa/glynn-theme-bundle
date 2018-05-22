@@ -8,7 +8,7 @@
       </notes>
       <segment>
         <source>site.meta.title</source>
-        <target></target>
+        <target>Glynn site</target>
       </segment>
     </unit>
     <unit id="0JY2lxk" name="site.navbar.toggle_navigation">
@@ -18,7 +18,7 @@
       </notes>
       <segment>
         <source>site.navbar.toggle_navigation</source>
-        <target></target>
+        <target>Toggle navigation</target>
       </segment>
     </unit>
     <unit id="XdjmwSf" name="site.navbar.title">
@@ -30,7 +30,7 @@
       </notes>
       <segment>
         <source>site.navbar.title</source>
-        <target></target>
+        <target>Glynn site</target>
       </segment>
     </unit>
     <unit id="yRn5L9c" name="site.navbar.admin">
@@ -40,7 +40,7 @@
       </notes>
       <segment>
         <source>site.navbar.admin</source>
-        <target></target>
+        <target>Admin</target>
       </segment>
     </unit>
     <unit id="qQ0clFV" name="site.navbar.logout">
@@ -50,7 +50,7 @@
       </notes>
       <segment>
         <source>site.navbar.logout</source>
-        <target></target>
+        <target>Logout</target>
       </segment>
     </unit>
     <unit id="HvyHuCV" name="site.navbar.login">
@@ -60,7 +60,7 @@
       </notes>
       <segment>
         <source>site.navbar.login</source>
-        <target></target>
+        <target>Login</target>
       </segment>
     </unit>
     <unit id="B_vlOyx" name="admin.nav.title_alt">
@@ -70,7 +70,7 @@
       </notes>
       <segment>
         <source>admin.nav.title_alt</source>
-        <target></target>
+        <target>Glynn admin logo</target>
       </segment>
     </unit>
     <unit id="rS8mmn1" name="admin.nav.title">
@@ -80,7 +80,7 @@
       </notes>
       <segment>
         <source>admin.nav.title</source>
-        <target></target>
+        <target>Glynn admin</target>
       </segment>
     </unit>
     <unit id="ChwWlxU" name="admin.nav.toggle_navigation">
@@ -90,7 +90,7 @@
       </notes>
       <segment>
         <source>admin.nav.toggle_navigation</source>
-        <target></target>
+        <target>Toggle navigation</target>
       </segment>
     </unit>
     <unit id="BdH2zgZ" name="admin.nav.profile">
@@ -100,7 +100,7 @@
       </notes>
       <segment>
         <source>admin.nav.profile</source>
-        <target></target>
+        <target>Profile</target>
       </segment>
     </unit>
     <unit id="7wKytOC" name="admin.nav.logout">
@@ -110,7 +110,7 @@
       </notes>
       <segment>
         <source>admin.nav.logout</source>
-        <target></target>
+        <target>Logout</target>
       </segment>
     </unit>
     <unit id="prSBapY" name="admin.nav.profile_image">
@@ -120,7 +120,7 @@
       </notes>
       <segment>
         <source>admin.nav.profile_image</source>
-        <target></target>
+        <target>My profile image</target>
       </segment>
     </unit>
     <unit id="ANxv3z4" name="admin.head.title">
@@ -130,7 +130,7 @@
       </notes>
       <segment>
         <source>admin.head.title</source>
-        <target></target>
+        <target>Title</target>
       </segment>
     </unit>
     <unit id="rlyEDvV" name="admin.main.title">
@@ -140,7 +140,7 @@
       </notes>
       <segment>
         <source>admin.main.title</source>
-        <target></target>
+        <target>Hello glynn admin</target>
       </segment>
     </unit>
   </file>
