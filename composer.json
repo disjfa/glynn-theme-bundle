@@ -15,7 +15,8 @@
   "require": {
     "php": "^7.1",
     "twig/twig": "^1.28 || ^2.0",
-    "symfony/templating": "^4.0"
+    "symfony/templating": "^4.0",
+    "disjfa/menu-bundle": "^0.1.1"
   },
   "autoload": {
     "psr-4": {

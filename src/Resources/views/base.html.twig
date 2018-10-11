@@ -30,7 +30,7 @@
 
             <div class="collapse navbar-collapse" id="main-navbar">
                 {% block navbar_menu %}
-                    {{ knp_menu_render('glynn-site', {'currentClass': 'active', 'ancestorClass': 'active', 'depth':2, 'template': 'admin/menu.html.twig'}) }}
+                    {{ knp_menu_render('site', {'currentClass': 'active', 'ancestorClass': 'active', 'depth':2, 'template': 'admin/menu.html.twig'}) }}
                 {% endblock %}
                 {% block navbar_user %}
                     <ul class="navbar-nav ml-auto">
