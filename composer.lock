@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "79fdef655d198a23c20a010b1c856e0e",
+    "content-hash": "5f101537e385e428d93da56a7409fe54",
     "packages": [
         {
             "name": "disjfa/menu-bundle",
-            "version": "0.1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/disjfa/menu-bundle.git",
@@ -1358,7 +1358,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "disjfa/menu-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
