@@ -7,88 +7,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}{{ 'site.meta.title' | trans }}{% endblock %}</title>
+    <title>{% block page_title %}{{ 'site.meta.title' | trans }}{% endblock %}</title>
+    {% block head_favicon %}
+        {{ include('@DisjfaPwa/meta.html.twig') }}
+    {% endblock %}
     {% block meta %}
         <meta name="description" content="{% block meta_description %}{% endblock %}">
-        {{ include('@GlynnTemplate/_meta.html.twig') }}
         {% block meta_og %}
         {% endblock %}
         {% block meta_twitter %}
             <meta name="twitter:card" value="summary">
         {% endblock %}
     {% endblock %}
-    <link rel="stylesheet" href="{{ asset('build/site.css') }}">
+    {% block head_stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/site.css') }}">
+    {% endblock %}
 </head>
-<body>
-{% block navbar %}
-    <nav class="navbar navbar-expand-lg {% block navbar_nav_class %}navbar-light bg-light{% endblock %}">
-        <div class="container">
-            <a class="navbar-brand" href="{{ path('home_index') }}">{% block navbar_brand %}{{ 'site.navbar.title' | trans }}{% endblock %}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="{{ 'site.navbar.toggle_navigation' | trans }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+{% block body %}
+    <body>
+    {% block wrapper %}
+    {% block header %}
+        <nav class="navbar navbar-expand-lg {% block navbar_nav_class %}navbar-light bg-light{% endblock %}">
+            <div class="container">
+                <a class="navbar-brand" href="{{ path('home_index') }}">{% block navbar_brand %}{{ 'site.navbar.title' | trans }}{% endblock %}</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="{{ 'site.navbar.toggle_navigation' | trans }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="main-navbar">
-                {% block navbar_menu %}
-                    {{ knp_menu_render('site', {'currentClass': 'active', 'ancestorClass': 'active', 'depth':2, 'template': 'admin/menu.html.twig'}) }}
-                {% endblock %}
-                {% block navbar_user %}
-                    <ul class="navbar-nav ml-auto">
-                        {% if app.user %}
-                            {% if is_granted('ROLE_ADMIN') %}
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    {% block main_menu_wrapper %}
+                        {% block navbar_menu %}
+                            {{ knp_menu_render('site', {'currentClass': 'active', 'ancestorClass': 'active', 'depth':2, 'template': 'admin/menu.html.twig'}) }}
+                        {% endblock %}
+                    {% endblock %}
+                    {% block user_menu %}
+                        <ul class="navbar-nav ml-auto">
+                            {% if app.user %}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li class="nav-item">
+                                        <a href="{{ path('admin_dashboard_index') }}" class="nav-link">
+                                            <i class="fa fa-tachometer-alt"></i>
+                                            {{ 'site.navbar.admin' | trans }}
+                                        </a>
+                                    </li>
+                                {% endif %}
                                 <li class="nav-item">
-                                    <a href="{{ path('admin_dashboard_index') }}" class="nav-link">
-                                        <i class="fa fa-tachometer-alt"></i>
-                                        {{ 'site.navbar.admin' | trans }}
+                                    <a href="{{ path('fos_user_profile_show') }}" class="nav-link">
+                                        <i class="fa fa-user"></i>
+                                        {{ app.user.username }}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('fos_user_security_logout') }}" class="nav-link">
+                                        <i class="fa fa-sign-out-alt"></i>
+                                        {{ 'site.navbar.logout' | trans }}
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a href="{{ path('fos_user_security_login') }}" class="nav-link">
+                                        <i class="fa fa-user"></i>
+                                        {{ 'site.navbar.login' | trans }}
                                     </a>
                                 </li>
                             {% endif %}
-                            <li class="nav-item">
-                                <a href="{{ path('fos_user_profile_show') }}" class="nav-link">
-                                    <i class="fa fa-user"></i>
-                                    {{ app.user.username }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ path('fos_user_security_logout') }}" class="nav-link">
-                                    <i class="fa fa-sign-out-alt"></i>
-                                    {{ 'site.navbar.logout' | trans }}
-                                </a>
-                            </li>
-                        {% else %}
-                            <li class="nav-item">
-                                <a href="{{ path('fos_user_security_login') }}" class="nav-link">
-                                    <i class="fa fa-user"></i>
-                                    {{ 'site.navbar.login' | trans }}
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                {% endblock %}
-            </div>
-        </div>
-    </nav>
-{% endblock %}
-<div id="base">
-    {% block flash_messages %}
-        {% for label, messages in app.flashes %}
-            {% for message in messages %}
-                <div class="container pt-3">
-                    <div class="alert alert-{{ label }} alert-dismissible fade show">
-                        {{ message }}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                        </ul>
+                    {% endblock %}
                 </div>
-            {% endfor %}
-        {% endfor %}
+            </div>
+        </nav>
     {% endblock %}
-    {% block body %}{% endblock %}
-</div>
-{% block footer %}{% endblock %}
-{% block javascripts %}
-    <script src="{{ asset('build/site.js') }}"></script>
+        <div id="base">
+            {% block flash_messages %}
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="container pt-3">
+                            <div class="alert alert-{{ label }} alert-dismissible fade show">
+                                {{ message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% endblock %}
+            {% block content_header %}
+            {% endblock %}
+            {% block content %}
+                {% block main %}{% endblock %}
+            {% endblock %}
+            {% block content_footer %}
+            {% endblock %}
+        </div>
+    {% block body_javascript %}
+        <script src="{{ asset('build/site.js') }}"></script>
+    {% endblock %}
+    {% endblock %}
+    </body>
 {% endblock %}
-</body>
 </html>

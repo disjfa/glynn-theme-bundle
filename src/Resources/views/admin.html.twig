@@ -1,105 +1,124 @@
 {%- trans_default_domain 'glynn-theme' -%}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale|split('_')|first|default('en') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}{{ 'admin.head.title' | trans }}{% endblock %}</title>
+    <title>{% block page_title %}{{ 'admin.head.title' | trans }}{% endblock %}</title>
     <meta name="description" content="{% block description %}{% endblock %}">
-    {% block meta %}
-        {{ include('@GlynnTemplate/_meta.html.twig') }}
+    {% block head_favicon %}
+        {{ include('@DisjfaPwa/meta.html.twig') }}
     {% endblock %}
-    {% block stylesheet %}
+    {% block head_stylesheets %}
         <link rel="stylesheet" href="{{ asset('build/admin.css') }}">
     {% endblock %}
 </head>
-<body>
-<div class="page">
-    <div class="page-sidebar">
-        <div class="sidebar navbar navbar-expand-lg navbar-dark d-lg-block px-0">
-            <div class="text-lg-center py-3 px-3">
-                <a class="site-title" href="{{ path('home_index') }}">
-                    <img src="{{ asset("admin/barista-icons_coffea-arabica.svg") }}" alt="{{ 'admin.nav.title_alt' | trans }}" title="">
-                    <span class="hidden-lg-up">
-                        {{ 'admin.nav.title' | trans }}
-                    </span>
-                </a>
-            </div>
-            <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#main-menu"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="{{ 'admin.nav.toggle_navigation' | trans }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="main-menu" role="navigation">
-                <div class="col-12 px-0">
-                    {% if app.user %}
-                        <div class="dropdown float-right">
-                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn text-muted">
-                                <i class="fa fa-chevron-down"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}">
-                                    <i class="fa fa-user"></i> {{ 'admin.nav.profile' | trans }}
-                                </a>
-                                <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">
-                                    <i class="fa fa-sign-out-alt"></i> {{ 'admin.nav.logout' | trans }}
-                                </a>
+{% block body %}
+    <body>
+    {% block wrapper %}
+        <div class="page">
+            <div class="page-sidebar">
+                {% block sidebar %}
+                    <div class="sidebar navbar navbar-expand-lg navbar-dark d-lg-block px-0">
+                        {% block header %}
+                            <div class="text-lg-center py-3 px-3">
+                                {% block header_logo %}
+                                    <a class="site-title" href="{{ path('home_index') }}">
+                                        <img src="{{ asset("admin/barista-icons_coffea-arabica.svg") }}" alt="{{ 'admin.nav.title_alt' | trans }}" title="">
+                                        <span class="hidden-lg-up">
+                                            {{ 'admin.nav.title' | trans }}
+                                        </span>
+                                    </a>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                        <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#main-menu"
+                                aria-controls="navbarText" aria-expanded="false" aria-label="{{ 'admin.nav.toggle_navigation' | trans }}">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="main-menu" role="navigation">
+                            <div class="col-12 px-0">
+                                {% block main_menu_wrapper %}
+                                    {% block header_user_menu %}
+                                        {% if app.user %}
+                                            <div class="dropdown float-right">
+                                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn text-muted">
+                                                    <i class="fa fa-chevron-down"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}">
+                                                        <i class="fa fa-user"></i> {{ 'admin.nav.profile' | trans }}
+                                                    </a>
+                                                    <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">
+                                                        <i class="fa fa-sign-out-alt"></i> {{ 'admin.nav.logout' | trans }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <a class="sidebar-user" href="{{ path('fos_user_profile_show') }}">
+                                                <div class="media">
+                                                    <div class="media-left">
+                                                        <img src="{{ gravatar(app.user.email) }}"
+                                                             class="rounded img-fluid sidebar-user-img pr-3"
+                                                             alt="{{ 'admin.nav.profile_image' | trans }}">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h4 class="media-heading">
+                                                            {{ app.user.username }}
+                                                        </h4>
+                                                        {{ app.user.email }}
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        {% endif %}
+                                    {% endblock %}
+
+                                    {{ knp_menu_render('admin', {'currentClass': 'active', 'ancestorClass': 'active', 'depth':3, 'template': 'admin/menu.html.twig'}) }}
+                                {% endblock %}
                             </div>
                         </div>
-                        <a class="sidebar-user" href="{{ path('fos_user_profile_show') }}">
-                            <div class="media">
-                                <div class="media-left">
-                                    <img src="{{ gravatar(app.user.email) }}"
-                                         class="rounded img-fluid sidebar-user-img pr-3"
-                                         alt="{{ 'admin.nav.profile_image' | trans }}">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">
-                                        {{ app.user.username }}
-                                    </h4>
-                                    {{ app.user.email }}
-                                </div>
-                            </div>
-                        </a>
-                    {% endif %}
-                    {{ knp_menu_render('admin', {'currentClass': 'active', 'ancestorClass': 'active', 'depth':3, 'template': 'admin/menu.html.twig'}) }}
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-body" id="base" role="main">
-        <div class="page-main-bg">
-            {% block page_title %}
-                <div class="bg-dark text-white py-3">
-                    <div class="container">
-                        <h1>{% block page_title_text %}{{ 'admin.main.title' | trans }}{% endblock %}</h1>
                     </div>
-                </div>
-            {% endblock %}
-            {% block flash_messages %}
-                {% for label, messages in app.flashes %}
-                    {% for message in messages %}
-                        <div class="container">
-                            <div class="alert alert-{{ label }} alert-dismissible fade show mt-3">
-                                {{ message }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endfor %}
-            {% endblock %}
-            {% block body %}{% endblock %}
-        </div>
-    </div>
-</div>
+                {% endblock %}
+            </div>
 
-{% block javascripts %}
-    <script src="{{ asset('build/admin.js') }}"></script>
+            <div class="page-body" id="base" role="main">
+                <div class="page-main-bg">
+                    {% block content %}
+                        {% block content_header %}
+                            <div class="bg-dark text-white py-3">
+                                <div class="container">
+                                    <h1>{% block content_title %}{{ 'admin.main.title' | trans }}{% endblock %}</h1>
+                                </div>
+                            </div>
+                        {% endblock %}
+                        {% block flash_messages %}
+                            {% for label, messages in app.flashes %}
+                                {% for message in messages %}
+                                    <div class="container">
+                                        <div class="alert alert-{{ label }} alert-dismissible fade show mt-3">
+                                            {{ message }}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        {% endblock %}
+                        {% block main %}{% endblock %}
+                        {% block content_footer %}
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+    {% block body_javascript %}
+        <script src="{{ asset('build/admin.js') }}"></script>
+    {% endblock %}
+    {% endblock %}
+    </body>
 {% endblock %}
-</body>
 </html>
