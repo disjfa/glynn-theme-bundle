@@ -20,7 +20,7 @@
         {% endblock %}
     {% endblock %}
     {% block head_stylesheets %}
-        <link rel="stylesheet" href="{{ asset('build/site.css') }}">
+        {{ encore_entry_link_tags('site') }}
     {% endblock %}
 </head>
 {% block body %}
@@ -101,7 +101,7 @@
             {% endblock %}
         </div>
     {% block body_javascript %}
-        <script src="{{ asset('build/site.js') }}"></script>
+        {{ encore_entry_script_tags('site') }}
     {% endblock %}
     {% endblock %}
     </body>

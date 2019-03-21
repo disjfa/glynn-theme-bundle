@@ -13,7 +13,7 @@
         {{ include('@DisjfaPwa/meta.html.twig') }}
     {% endblock %}
     {% block head_stylesheets %}
-        <link rel="stylesheet" href="{{ asset('build/admin.css') }}">
+        {{ encore_entry_link_tags('admin') }}
     {% endblock %}
 </head>
 {% block body %}
@@ -116,7 +116,7 @@
         </div>
 
     {% block body_javascript %}
-        <script src="{{ asset('build/admin.js') }}"></script>
+        {{ encore_entry_script_tags('admin') }}
     {% endblock %}
     {% endblock %}
     </body>
