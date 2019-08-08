@@ -16,16 +16,12 @@
     "php": "^7.1",
     "twig/twig": "^1.28 || ^2.0",
     "symfony/templating": "^4.0",
-    "disjfa/menu-bundle": "dev-master"
+    "disjfa/menu-bundle": "^0.2",
+    "symfony/webpack-encore-bundle": "^1.6"
   },
   "autoload": {
     "psr-4": {
       "Disjfa\\GlynnTemplateBundle\\": "src/"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "0.1.x-dev"
     }
   }
 }
