@@ -1,27 +1,33 @@
 {
-  "name": "disjfa/glynn-theme-bundle",
-  "type": "symfony-bundle",
-  "description": "Symfony glynn admin theme bundle",
-  "keywords": ["Theme bundle"],
-  "homepage": "https://github.com/disjfa/glynn-theme-bundle",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "disjfa",
-      "email": "disjfa@disjfa.nl",
-      "homepage": "https://github.com/disjfa"
+    "name": "disjfa/glynn-theme-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony glynn admin theme bundle",
+    "keywords": [
+        "Theme bundle"
+    ],
+    "homepage": "https://github.com/disjfa/glynn-theme-bundle",
+    "support": {
+        "issues": "https://github.com/disjfa/glynn-theme-bundle/issues",
+        "source": "https://github.com/disjfa/glynn-theme-bundle"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "disjfa",
+            "email": "disjfa@disjfa.nl",
+            "homepage": "https://github.com/disjfa"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "twig/twig": "^1|^2|^3",
+        "symfony/templating": "^4|^5",
+        "disjfa/menu-bundle": "^0.2",
+        "symfony/webpack-encore-bundle": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Disjfa\\GlynnTemplateBundle\\": "src/"
+        }
     }
-  ],
-  "require": {
-    "php": "^7.1",
-    "twig/twig": "^1.28 || ^2.0",
-    "symfony/templating": "^4.0",
-    "disjfa/menu-bundle": "^0.2",
-    "symfony/webpack-encore-bundle": "^1.6"
-  },
-  "autoload": {
-    "psr-4": {
-      "Disjfa\\GlynnTemplateBundle\\": "src/"
-    }
-  }
 }
