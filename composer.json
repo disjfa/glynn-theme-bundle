@@ -22,7 +22,7 @@
         "php": "^7.1",
         "twig/twig": "^1|^2|^3",
         "symfony/templating": "^4|^5",
-        "disjfa/menu-bundle": "^0.2",
+        "disjfa/menu-bundle": "^0",
         "symfony/webpack-encore-bundle": "^1.6"
     },
     "autoload": {
