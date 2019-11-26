@@ -50,25 +50,11 @@
                                         </a>
                                     </li>
                                 {% endif %}
-                                <li class="nav-item">
-                                    <a href="{{ path('fos_user_profile_show') }}" class="nav-link">
-                                        <i class="fa fa-user"></i>
-                                        {{ app.user.username }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ path('fos_user_security_logout') }}" class="nav-link">
-                                        <i class="fa fa-sign-out-alt"></i>
-                                        {{ 'site.navbar.logout' | trans }}
-                                    </a>
-                                </li>
+                                {% block user_menu_logged_in %}
+                                {% endblock %}
                             {% else %}
-                                <li class="nav-item">
-                                    <a href="{{ path('fos_user_security_login') }}" class="nav-link">
-                                        <i class="fa fa-user"></i>
-                                        {{ 'site.navbar.login' | trans }}
-                                    </a>
-                                </li>
+                                {% block user_menu_logged_out %}
+                                {% endblock %}
                             {% endif %}
                         </ul>
                     {% endblock %}
