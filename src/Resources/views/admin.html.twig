@@ -1,7 +1,7 @@
 {%- trans_default_domain 'glynn-theme' -%}
 
 <!DOCTYPE html>
-<html lang="{{ app.request.locale|split('_')|first|default('en') }}">
+<html lang="{{ app.request.locale|split('_')|first|default('en') }}" data-bs-theme="{% block site_theme %}dark{% endblock %}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,20 +21,20 @@
     <div class="page">
         <div class="page-sidebar">
             {% block sidebar %}
-                <div class="sidebar navbar navbar-expand-lg navbar-dark d-lg-block px-0">
+                <div class="sidebar navbar navbar-expand-lg d-lg-block px-0">
                     {% block header %}
                         <div class="text-lg-center py-3 px-3">
                             {% block header_logo %}
                                 <a class="site-title" href="{{ path('home_index') }}">
                                     <img src="{{ asset("admin/barista-icons_coffea-arabica.svg") }}" alt="{{ 'admin.nav.title_alt' | trans }}" title="">
                                     <span class="hidden-lg-up">
-                                            {{ 'admin.nav.title' | trans }}
-                                        </span>
+                                        {{ 'admin.nav.title' | trans }}
+                                    </span>
                                 </a>
                             {% endblock %}
                         </div>
                     {% endblock %}
-                    <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#main-menu"
+                    <button class="navbar-toggler mr-3" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu"
                             aria-controls="navbarText" aria-expanded="false" aria-label="{{ 'admin.nav.toggle_navigation' | trans }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -42,7 +42,7 @@
                         <div class="col-12 px-0">
                             {% block main_menu_wrapper %}
                                 {% block header_user_menu %}
-                                    asdasd
+                                    <hr>
                                 {% endblock %}
 
                                 {{ knp_menu_render('admin', {'currentClass': 'active', 'ancestorClass': 'active', 'depth':3, 'template': 'admin/menu.html.twig'}) }}
@@ -57,7 +57,7 @@
             <div class="page-main-bg">
                 {% block content %}
                     {% block content_header %}
-                        <div class="bg-dark text-white py-3">
+                        <div class="bg-body-tertiary py-3">
                             <div class="container">
                                 <h1>{% block content_title %}{{ 'admin.main.title' | trans }}{% endblock %}</h1>
                             </div>
